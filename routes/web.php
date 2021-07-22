@@ -13,8 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('admin.home');
+// });
+
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){ 
+    Route::get('/', function () {
+        return view('admin.home');
+    })->name('admin');
 });
 
 Route::get('/dashboard', function () {
