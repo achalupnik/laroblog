@@ -2,17 +2,14 @@
     nav {
         padding: 15px 20px;
         background-color: rgb(233, 233, 233);
+        box-shadow: 0px 3px 4px -4px black;
     }
     #homeText {
-        padding-left: 8px;
         font-family: monospace;
         font-size: 20px;
     }
     #homeText:hover {
         text-decoration: none;
-    }
-    .blackText {
-        color: black;
     }
     #homeParent:hover {
         transform: scale(1.1);
@@ -45,6 +42,10 @@
         position: absolute;
         margin-left: 10px;
         margin-right: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 220px;
     }
     .dropdown-menu {
         width: 300px;
@@ -78,8 +79,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li id="homeParent" class="nav-item active">
-                <a class="float-left blackText" href="{{ route('admin') }}"><x-bi-house style="height: 30px; width: 30px"/></a>
-                <a class="float-left blackText" id="homeText" href="{{ route('admin') }}"> LaraBlog</a>
+                <a class="text-dark" id="homeText" href="{{ route('dashboard') }}"> LaroBlog</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -103,6 +103,7 @@
                         </span>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Ustawienia</a>
                     <div class="dropdown-item" id="dropdownMenuLogOut">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
