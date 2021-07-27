@@ -1,14 +1,5 @@
-<style>
-    #loginFormContainer {
-        margin-top: 20vh;
-        width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-</style>
 
-<div id="loginFormContainer">
     <x-guest-layout>
         <x-auth-card>
             <x-slot name="logo">
@@ -67,4 +58,3 @@
             </div>
         </x-auth-card>
     </x-guest-layout>
-</div>

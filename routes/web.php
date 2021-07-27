@@ -21,6 +21,13 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/', function () {
         return view('admin.home');
     })->name('admin');
+
+    Route::get('userslist', function() {
+        return view('admin.users-list');
+    })->name('users-list');
+
+    Route::get('getUsersListDBTables', 'App\Http\Controllers\UsersController@getUsersListDBTables')->name('getUsersListDBTables');
+
 });
 
 Route::get('/dashboard', function () {

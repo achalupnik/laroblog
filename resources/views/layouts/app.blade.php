@@ -12,6 +12,16 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
         <link rel="manifest" href="{{ asset('site.webmanifest') }}">
         
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+        <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" defer></script>
+
+
+
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -22,14 +32,14 @@
         <script src="{{ asset('js/app.js') }}" ></script>
     </head>
     <body class="font-sans antialiased">
+        @include('layouts.top-bar')
+
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.top-bar')
             @include('layouts.side-bar')
 
             <!-- Page Content -->
-            <main>
-                
-            </main>
+            @yield('content')
+
         </div>
     </body>
 </html>
