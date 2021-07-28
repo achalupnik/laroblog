@@ -1,7 +1,8 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="{{ asset('css/admin-home.css') }}">
 
 @section('content')
-<div style="margin: 30px 20px 20px 80px; text-align: justify; font-size: 18px">
+<div id="home_content">
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum ex purus, ut molestie magna blandit vel. Cras placerat ac ante quis consequat. Suspendisse iaculis nunc id auctor facilisis. Aliquam erat volutpat. Proin dapibus finibus scelerisque. Phasellus suscipit, erat et efficitur bibendum, tortor lorem lacinia lectus, et elementum dolor erat et lorem. Aenean dignissim pretium est, a malesuada orci aliquam in.
 </p>

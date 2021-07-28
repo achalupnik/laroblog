@@ -2,30 +2,39 @@
 
 
 @section('content')
-<div class="container">
-               <h2>Laravel DataTable - Tuts Make</h2>
-            <table class="table table-bordered" id="laravel_datatable">
-               <thead>
-                  <tr>
-                     <th>Osoba</th>
-                     <th>Email</th>
-                     <th>Utworzony</th>
-                  </tr>
-               </thead>
-            </table>
-         </div>
-   <script>
-   $(document).ready( function () {
-    $('#laravel_datatable').DataTable({
-           processing: true,
-           serverSide: true,
-           ajax: "{{ route('getUsersListDBTables') }}",
-           columns: [
-                    { data: 'name', name: 'name' },
-                    { data: 'email', name: 'email' },
-                    { data: 'created_at', name: 'created_at' }
-                 ]
-        });
-     });
-  </script>
+
+   <table class="table w-100">
+      <thead>
+         <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+         </tr>
+         <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+         </tr>
+         <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+         </tr>
+      </tbody>
+   </table>
+
+
+
+
   @endsection

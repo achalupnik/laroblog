@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app-sass.css": "/css/app-sass.css",
+    "/css/app.css": "/css/app.css",
+    "/css/admin-home.css": "/css/admin-home.css",
+    "/css/top-bar.css": "/css/top-bar.css",
+    "/css/side-bar.css": "/css/side-bar.css",
+    "/css/app-main.css": "/css/app-main.css"
 }

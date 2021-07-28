@@ -26,9 +26,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
         return view('admin.users-list');
     })->name('users-list');
 
-    Route::get('getUsersListDBTables', 'App\Http\Controllers\UsersController@getUsersListDBTables')->name('getUsersListDBTables');
-
+    Route::get('getUsersListDBTables', 'UsersController@getUsersListDBTables')->name('getUsersListDBTables');
 });
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

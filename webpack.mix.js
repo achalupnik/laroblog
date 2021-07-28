@@ -11,6 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
+ mix.js(['resources/js/app.js', 'resources/js/side-bar.js'], 'public/js').postCss('resources/css/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]).sass('resources/sass/app.scss', 'public/css/app-sass.css').sourceMaps();
+mix.styles('resources/css/admin-home.css', 'public/css/admin-home.css');
+mix.styles('resources/css/top-bar.css', 'public/css/top-bar.css');
+mix.styles('resources/css/side-bar.css', 'public/css/side-bar.css');
+mix.styles('resources/css/app-main.css', 'public/css/app-main.css');
