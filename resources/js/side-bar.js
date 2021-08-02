@@ -1,41 +1,24 @@
-$(document).ready(function() {
-    $(window).resize(function() {
-        var win = $(this);
-        if (win.width() >= 1200) {
-            $('#sideBarContainerMain').find('.animated').addClass('staticPosition');
-            $('.positioned').hover(function() {
-                $(this).find('.sideBarIcons').addClass('focused');
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
 
-                $(this).find('ul').addClass('showUl');
-                $(this).find('ul').removeClass('hideUl');
-            }, function() {
-                $(this).find('.sideBarIcons').removeClass('focused');
-
-                $(this).find('ul').addClass('hideUl');
-                $(this).find('ul').removeClass('showUl');
-            });
-        } else {
-            $('#sideBarContainerMain').find('.animated').removeClass('staticPosition');
-            $('.positioned').hover(function() {
-                $(this).find('.animated').animate({
-                     left: '60px'
-                });
-                $(this).find('.sideBarIcons').addClass('focused');
-                $(this).find('.animated label').addClass('focused');
-
-                $(this).find('ul').addClass('showUl');
-                $(this).find('ul').removeClass('hideUl');
-            }, function() {
-
-                $(this).find('.animated').animate({
-                     left: '-190px'
-                });
-                $(this).find('.sideBarIcons').removeClass('focused');
-                $(this).find('.animated label').removeClass('focused');
-
-                $(this).find('ul').addClass('hideUl');
-                $(this).find('ul').removeClass('showUl');
-            });
-        }
-    });
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
 });
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   $('.content-container').css('margin', '30px 20px 20px 280px')
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   $('.content-container').css('margin', '30px 20px 20px 100px')
+ }
+}

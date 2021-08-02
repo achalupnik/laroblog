@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app-sass.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app-main.css') }}">
 
@@ -23,10 +24,9 @@
         <script src="{{ asset('js/app.js') }}" ></script>
     </head>
     <body class="font-sans antialiased">
-        @include('layouts.top-bar')
         @include('layouts.side-bar')
 
-        <div class="min-h-screen bg-gray-100 content-container">
+        <div class="content-container">
 
             <!-- Page Content -->
             @yield('content')
@@ -34,10 +34,4 @@
         </div>
     </body>
 </html>
-
-<style>
-
-    </style>
-
-
 
