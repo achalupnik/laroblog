@@ -3,7 +3,7 @@
 
 @section('content')
 
-   <table id="users_list_table" class="table w-100">
+   <table id="users_list_table" class="table w-100 table-striped table-bordered">
       <thead>
          <tr>
             <th scope="col">Osoba</th>

@@ -20,6 +20,8 @@ const mix = require('laravel-mix');
 //layout
 mix.js('resources/js/side-bar.js', 'public/js/side-bar.js');
 mix.styles('resources/css/admin-home.css', 'public/css/admin-home.css');
+mix.styles('resources/css/categories.css', 'public/css/categories.css');
+mix.styles('resources/css/loader-animation.css', 'public/css/loader-animation.css');
 mix.styles('resources/css/top-bar.css', 'public/css/top-bar.css');
 mix.styles('resources/css/side-bar.css', 'public/css/side-bar.css');
 mix.styles('resources/css/app-main.css', 'public/css/app-main.css');

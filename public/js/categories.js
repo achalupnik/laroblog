@@ -1,0 +1,32 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./resources/js/categories.js":
+/*!************************************!*\
+  !*** ./resources/js/categories.js ***!
+  \************************************/
+/***/ (() => {
+
+eval("$(document).ready(function () {\n  var deleting_category;\n  $('.b-delete-category').click(function () {\n    deleting_category = $(this).closest('form');\n    $('#m-confirm').modal('show');\n  });\n  $('#m-b-delete-category').click(function () {\n    $(deleting_category).submit();\n  });\n  $('body #chkToggle2').bootstrapToggle();\n  $('#m-add-category').on('shown.bs.modal', function () {\n    $('#m-i-category-name').trigger('focus');\n  });\n  $('.m-toggle input').change(function () {\n    var toggle_state = $(this).is(':checked') ? '0' : '1';\n    var category_id = $(this).closest('tr').attr('id');\n    var CSRF_TOKEN = $('meta[name=\"csrf-token\"]').attr('content');\n    $.ajax({\n      url: \"{{ route('categories.update', '') }}\" + '/' + category_id,\n      dataType: 'JSON',\n      type: 'PATCH',\n      data: {\n        _token: CSRF_TOKEN,\n        disabled: toggle_state\n      }\n    });\n  });\n  $('#success-message').delay(10000).fadeOut();\n  $('#error-message').delay(10000).fadeOut();\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvY2F0ZWdvcmllcy5qcz9kMzQ5Il0sIm5hbWVzIjpbIiQiLCJkb2N1bWVudCIsInJlYWR5IiwiZGVsZXRpbmdfY2F0ZWdvcnkiLCJjbGljayIsImNsb3Nlc3QiLCJtb2RhbCIsInN1Ym1pdCIsImJvb3RzdHJhcFRvZ2dsZSIsIm9uIiwidHJpZ2dlciIsImNoYW5nZSIsInRvZ2dsZV9zdGF0ZSIsImlzIiwiY2F0ZWdvcnlfaWQiLCJhdHRyIiwiQ1NSRl9UT0tFTiIsImFqYXgiLCJ1cmwiLCJkYXRhVHlwZSIsInR5cGUiLCJkYXRhIiwiX3Rva2VuIiwiZGlzYWJsZWQiLCJkZWxheSIsImZhZGVPdXQiXSwibWFwcGluZ3MiOiJBQUFBQSxDQUFDLENBQUVDLFFBQUYsQ0FBRCxDQUFjQyxLQUFkLENBQW9CLFlBQVc7QUFDM0IsTUFBSUMsaUJBQUo7QUFFQUgsRUFBQUEsQ0FBQyxDQUFDLG9CQUFELENBQUQsQ0FBd0JJLEtBQXhCLENBQThCLFlBQVc7QUFDckNELElBQUFBLGlCQUFpQixHQUFHSCxDQUFDLENBQUMsSUFBRCxDQUFELENBQVFLLE9BQVIsQ0FBZ0IsTUFBaEIsQ0FBcEI7QUFDQUwsSUFBQUEsQ0FBQyxDQUFDLFlBQUQsQ0FBRCxDQUFnQk0sS0FBaEIsQ0FBc0IsTUFBdEI7QUFDSCxHQUhEO0FBS0FOLEVBQUFBLENBQUMsQ0FBQyxzQkFBRCxDQUFELENBQTBCSSxLQUExQixDQUFnQyxZQUFXO0FBQ3ZDSixJQUFBQSxDQUFDLENBQUNHLGlCQUFELENBQUQsQ0FBcUJJLE1BQXJCO0FBQ0gsR0FGRDtBQUlBUCxFQUFBQSxDQUFDLENBQUMsa0JBQUQsQ0FBRCxDQUFzQlEsZUFBdEI7QUFDQVIsRUFBQUEsQ0FBQyxDQUFDLGlCQUFELENBQUQsQ0FBcUJTLEVBQXJCLENBQXdCLGdCQUF4QixFQUEwQyxZQUFZO0FBQ2xEVCxJQUFBQSxDQUFDLENBQUMsb0JBQUQsQ0FBRCxDQUF3QlUsT0FBeEIsQ0FBZ0MsT0FBaEM7QUFDSCxHQUZEO0FBSUFWLEVBQUFBLENBQUMsQ0FBQyxpQkFBRCxDQUFELENBQXFCVyxNQUFyQixDQUE0QixZQUFXO0FBQ25DLFFBQUlDLFlBQVksR0FBR1osQ0FBQyxDQUFDLElBQUQsQ0FBRCxDQUFRYSxFQUFSLENBQVcsVUFBWCxJQUF1QixHQUF2QixHQUEyQixHQUE5QztBQUNBLFFBQUlDLFdBQVcsR0FBR2QsQ0FBQyxDQUFDLElBQUQsQ0FBRCxDQUFRSyxPQUFSLENBQWdCLElBQWhCLEVBQXNCVSxJQUF0QixDQUEyQixJQUEzQixDQUFsQjtBQUNBLFFBQUlDLFVBQVUsR0FBR2hCLENBQUMsQ0FBQyx5QkFBRCxDQUFELENBQTZCZSxJQUE3QixDQUFrQyxTQUFsQyxDQUFqQjtBQUNBZixJQUFBQSxDQUFDLENBQUNpQixJQUFGLENBQU87QUFDSEMsTUFBQUEsR0FBRyxFQUFFLHlDQUF1QyxHQUF2QyxHQUEyQ0osV0FEN0M7QUFFSEssTUFBQUEsUUFBUSxFQUFFLE1BRlA7QUFHSEMsTUFBQUEsSUFBSSxFQUFDLE9BSEY7QUFJSEMsTUFBQUEsSUFBSSxFQUFFO0FBQ0ZDLFFBQUFBLE1BQU0sRUFBRU4sVUFETjtBQUVGTyxRQUFBQSxRQUFRLEVBQUVYO0FBRlI7QUFKSCxLQUFQO0FBU0gsR0FiRDtBQWVBWixFQUFBQSxDQUFDLENBQUMsa0JBQUQsQ0FBRCxDQUFzQndCLEtBQXRCLENBQTRCLEtBQTVCLEVBQW1DQyxPQUFuQztBQUNBekIsRUFBQUEsQ0FBQyxDQUFDLGdCQUFELENBQUQsQ0FBb0J3QixLQUFwQixDQUEwQixLQUExQixFQUFpQ0MsT0FBakM7QUFDSCxDQWxDRCIsInNvdXJjZXNDb250ZW50IjpbIiQoIGRvY3VtZW50ICkucmVhZHkoZnVuY3Rpb24oKSB7XHJcbiAgICB2YXIgZGVsZXRpbmdfY2F0ZWdvcnk7XHJcbiAgICBcclxuICAgICQoJy5iLWRlbGV0ZS1jYXRlZ29yeScpLmNsaWNrKGZ1bmN0aW9uKCkge1xyXG4gICAgICAgIGRlbGV0aW5nX2NhdGVnb3J5ID0gJCh0aGlzKS5jbG9zZXN0KCdmb3JtJyk7XHJcbiAgICAgICAgJCgnI20tY29uZmlybScpLm1vZGFsKCdzaG93Jyk7XHJcbiAgICB9KVxyXG4gICAgXHJcbiAgICAkKCcjbS1iLWRlbGV0ZS1jYXRlZ29yeScpLmNsaWNrKGZ1bmN0aW9uKCkge1xyXG4gICAgICAgICQoZGVsZXRpbmdfY2F0ZWdvcnkpLnN1Ym1pdCgpO1xyXG4gICAgfSlcclxuXHJcbiAgICAkKCdib2R5ICNjaGtUb2dnbGUyJykuYm9vdHN0cmFwVG9nZ2xlKCk7XHJcbiAgICAkKCcjbS1hZGQtY2F0ZWdvcnknKS5vbignc2hvd24uYnMubW9kYWwnLCBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgJCgnI20taS1jYXRlZ29yeS1uYW1lJykudHJpZ2dlcignZm9jdXMnKVxyXG4gICAgfSlcclxuXHJcbiAgICAkKCcubS10b2dnbGUgaW5wdXQnKS5jaGFuZ2UoZnVuY3Rpb24oKSB7XHJcbiAgICAgICAgbGV0IHRvZ2dsZV9zdGF0ZSA9ICQodGhpcykuaXMoJzpjaGVja2VkJyk/JzAnOicxJztcclxuICAgICAgICBsZXQgY2F0ZWdvcnlfaWQgPSAkKHRoaXMpLmNsb3Nlc3QoJ3RyJykuYXR0cignaWQnKTtcclxuICAgICAgICBsZXQgQ1NSRl9UT0tFTiA9ICQoJ21ldGFbbmFtZT1cImNzcmYtdG9rZW5cIl0nKS5hdHRyKCdjb250ZW50Jyk7XHJcbiAgICAgICAgJC5hamF4KHtcclxuICAgICAgICAgICAgdXJsOiBcInt7IHJvdXRlKCdjYXRlZ29yaWVzLnVwZGF0ZScsICcnKSB9fVwiKycvJytjYXRlZ29yeV9pZCxcclxuICAgICAgICAgICAgZGF0YVR5cGU6ICdKU09OJyxcclxuICAgICAgICAgICAgdHlwZTonUEFUQ0gnLFxyXG4gICAgICAgICAgICBkYXRhOiB7XHJcbiAgICAgICAgICAgICAgICBfdG9rZW46IENTUkZfVE9LRU4sXHJcbiAgICAgICAgICAgICAgICBkaXNhYmxlZDogdG9nZ2xlX3N0YXRlXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9KTtcclxuICAgIH0pXHJcblxyXG4gICAgJCgnI3N1Y2Nlc3MtbWVzc2FnZScpLmRlbGF5KDEwMDAwKS5mYWRlT3V0KCk7XHJcbiAgICAkKCcjZXJyb3ItbWVzc2FnZScpLmRlbGF5KDEwMDAwKS5mYWRlT3V0KCk7XHJcbn0pOyJdLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvY2F0ZWdvcmllcy5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/categories.js\n");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./resources/js/categories.js"]();
+/******/ 	
+/******/ })()
+;

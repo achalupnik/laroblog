@@ -1,0 +1,22 @@
+#add-category-btn {
+    display: flex;
+    margin-bottom: 20px;
+}
+#add-category-btn svg {
+    margin-right: 7px;
+}
+#m-error-message {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#success-message,
+#error-message {
+    position: absolute;
+    top: 15px;
+    font-size: 18px;
+}
+#m-confirm .modal-header {
+    border: none;
+}

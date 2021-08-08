@@ -203,7 +203,7 @@
     margin-right: 10px;
 }
 .sidebar li.profile .name,
-.sidebar li.profile .job{
+.sidebar li.profile .role{
     font-size: 15px;
     font-weight: 400;
     color: #fff;
@@ -212,7 +212,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.sidebar li.profile .job{
+.sidebar li.profile .role{
     font-size: 12px;
 }
 .sidebar .profile #log_out{

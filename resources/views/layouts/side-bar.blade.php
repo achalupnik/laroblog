@@ -8,21 +8,21 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{ route('admin') }}">
+                <a href="{{ route('home.index') }}">
                     <x-bi-house class="sideBarIcons"/>
                     <span class="links_name">Strona domowa</span>
                 </a>
                 <span class="tooltip">Strona domowa</span>
             </li>
             <li>
-                <a href="{{ route('users-list') }}">
+                <a href="{{ route('users.index') }}">
                     <x-bi-people-fill class="sideBarIcons"/>
                     <span class="links_name">Lista użytkowników</span>
                 </a>
                 <span class="tooltip">Lista użytkowników</span>
             </li>
             <li>
-                <a href="{{ route('categories') }}">
+                <a href="{{ route('categories.index') }}">
                     <x-bi-list-ol class="sideBarIcons"/>
                     <span class="links_name">Kategorie</span>
                 </a>
@@ -31,10 +31,10 @@
             <li class="profile">
                 <div class="profile-details">
                     <x-bi-person-circle id="dropdownMenuIcon" style="height: 50px; width: 50px"/>
-                    <div class="name_job">
-                    <div class="name">{{ Auth::user()->name }}</div>
-                    <!-- <div class="job"> ucfirst($logged_user_data->name) </div> -->
-                </div>
+                    <div class="name_role">
+                        <div class="name">{{ auth()->user()->name }}</div>
+                        <div class="role">{{ ucfirst(auth()->user()->role->name) }}</div>
+                    </div>
                 </div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
