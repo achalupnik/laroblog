@@ -8,5 +8,10 @@
     "/css/loader-animation.css": "/css/loader-animation.css",
     "/css/top-bar.css": "/css/top-bar.css",
     "/css/side-bar.css": "/css/side-bar.css",
-    "/css/app-main.css": "/css/app-main.css"
+    "/css/app-main.css": "/css/app-main.css",
+    "/node_modules/tinymce/jquery.tinymce.js": "/node_modules/tinymce/jquery.tinymce.js",
+    "/node_modules/tinymce/jquery.tinymce.min.js": "/node_modules/tinymce/jquery.tinymce.min.js",
+    "/node_modules/tinymce/tinymce.js": "/node_modules/tinymce/tinymce.js",
+    "/node_modules/tinymce/tinymce.min.js": "/node_modules/tinymce/tinymce.min.js",
+    "/node_modules/tinymce/langs/pl.js": "/node_modules/tinymce/langs/pl.js"
 }

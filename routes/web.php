@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
-use App\Models\Category;
 
 
 /*
@@ -21,10 +19,14 @@ use App\Models\Category;
 // });
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){ 
+    Route::get('home', function() {
+        return view('admin.home');
+    })->name('home.index');
+
     Route::resources([
-        'home' => HomeController::class,
         'users' => UserController::class,
-        'categories' => CategoryController::class
+        'categories' => CategoryController::class,
+        'new_post' => NewPostController::class
     ]);
 });
 

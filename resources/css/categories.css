@@ -20,3 +20,6 @@
 #m-confirm .modal-header {
     border: none;
 }
+#table-container svg {
+    height: 22px; width: 22px
+}

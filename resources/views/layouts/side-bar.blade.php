@@ -28,6 +28,13 @@
                 </a>
                 <span class="tooltip">Kategorie</span>
             </li>
+            <li>
+                <a href="{{ route('new_post.index') }}">
+                    <x-bi-plus-square class="sideBarIcons"/>
+                    <span class="links_name">Nowy post</span>
+                </a>
+                <span class="tooltip">Nowy post</span>
+            </li>
             <li class="profile">
                 <div class="profile-details">
                     <x-bi-person-circle id="dropdownMenuIcon" style="height: 50px; width: 50px"/>

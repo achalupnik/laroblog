@@ -16,14 +16,13 @@
     <div id="error-message" class="alert alert-danger">{{ Session::get('error_message') }}</div>
 @endif
 
-<button id="add-category-btn" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#m-add-category"><x-bi-plus-square style="height: 22px; width: 22px"/>Dodaj kategorię</button>
+<button id="add-category-btn" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#m-add-category"><x-bi-plus-square/>Dodaj kategorię</button>
 
 <div id="table-container">
     <table id="users_list_table" class="table w-100 table-striped">
         <thead>
             <tr>
                 <th scope="col">Kategoria</th>
-                <th scope="col">Edytuj</th>
                 <th scope="col">Widoczna</th>
                 <th scope="col">Usuń</th>
             </tr>
@@ -32,13 +31,12 @@
         @foreach($categories as $category)
             <tr id={{ $category->id }}>
                 <td id="t-category-name" class="align-middle">{{ $category->name }}</td>
-                <td id="t-category-name" class="align-middle"><i class="fas fa-edit"></i></td>
                 <td class="align-middle m-toggle"><input id="chkToggle2" type="checkbox" data-toggle="toggle" data-size="sm" {{ $category->disabled?'':'checked' }}></td>
                 <td>
                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('delete') }}
-                        <button type="button" class="btn btn-danger t-delete-category"><x-bi-trash style="height: 22px; width: 22px"/></button>
+                        <button type="button" class="btn btn-danger t-delete-category"><x-bi-trash/></button>
                     </form>
                 </td>
             </tr>
