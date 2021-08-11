@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Post;
 
 class NewPostController extends Controller
 {
@@ -36,7 +38,25 @@ class NewPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:300',
+            'category' => 'required|numeric',
+            'image' => 'nullable|mimes:png,jpg,jpeg,gif'
+        ]);
+        $post = new Post;
+        $post->author = Auth::user()->id;
+        $post->fill($request->all());
+        if($request->input('type') == 2 && $request->hasFile('image')) {
+            $path = $request->image->path();
+            $extension = $request->image->extension();
+            $file_path = $request->image->store('image/'.Auth::user()->id);
+            $post->file_path = $file_path;
+        }
+        if($post->save()) {
+            return redirect()->route('new_post.index')->with('success_message', 'Post został dodany');
+        } else {
+            return redirect()->route('new_post.index')->with('error_message', 'Wystąpił błąd podczas zapisywania danych');
+        }
     }
 
     /**

@@ -33,6 +33,22 @@
     }
 </style>
 
+@if ($errors->any())
+    <div class="alert alert-danger error-message">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@if(Session::has('success_message'))
+    <div id="success-message" class="alert alert-success">{{ Session::get('success_message') }}</div>
+@endif
+@if(Session::has('error_message'))
+    <div class="alert alert-danger error-message">{{ Session::get('error_message') }}</div>
+@endif
 
 
 <div id="post-container">
@@ -54,23 +70,27 @@
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <form action="{{ route('new_post.store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                <input type="hidden" name="type" value="1">
+                <input type="hidden" name="category" class="hidden-category">
                 <div class="title-wrapper">
-                    <input type="text" class="form-control mb-2 post-title" placeholder="Tytuł" required maxlength="200">
-                    <span class="word-counter">0/200</span>
+                    <input type="text" class="form-control mb-2 post-title" name="title" placeholder="Tytuł" required maxlength="300">
+                    <span class="word-counter">0/300</span>
                 </div>
-                <textarea class="description" name="description"></textarea>
+                <textarea class="description" name="text"></textarea>
                 <button type="submit" class="btn btn-primary float-right mt-4 disabled" disabled>Dodaj post</button>
             </form>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <form action="{{ route('new_post.store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                <input type="hidden" name="type" value="2">
+                <input type="hidden" name="category" class="hidden-category">
                 <div class="title-wrapper">
-                    <input type="text" class="form-control mb-2 post-title" placeholder="Tytuł" required maxlength="200">
-                    <span class="word-counter">0/200</span>
+                    <input type="text" class="form-control mb-2 post-title" name="title" placeholder="Tytuł" required maxlength="300">
+                    <span class="word-counter">0/300</span>
                 </div>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" accept="image/*">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="image" accept="image/*">
                     <label class="custom-file-label" for="inputGroupFile01">Wybierz obraz</label>
                 </div>
                 <button type="submit" class="btn btn-primary float-right mt-4 disabled" disabled>Dodaj post</button>
@@ -79,11 +99,13 @@
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <form action="{{ route('new_post.store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                <input type="hidden" name="type" value="3">
+                <input type="hidden" name="category" class="hidden-category">
                 <div class="title-wrapper">
-                    <input type="text" class="form-control mb-2 post-title" placeholder="Tytuł" required maxlength="200">
-                    <span class="word-counter">0/200</span>
+                    <input type="text" class="form-control mb-2 post-title" name="title" placeholder="Tytuł" required maxlength="300">
+                    <span class="word-counter">0/300</span>
                 </div>
-                <textarea class="form-control" row="1" name="description" placeholer="URL"></textarea>
+                <textarea class="form-control" row="1" name="url" placeholder="URL"></textarea>
                 <button type="submit" class="btn btn-primary float-right mt-4 disabled" disabled>Dodaj post</button>
             </form>
         </div>
@@ -97,17 +119,19 @@
     tinymce.init({
         language : "pl",
         selector:'textarea.description',
+        forced_root_block : "",
         width: 900,
         height: 300
     });
 
     $('.post-title').on('keyup', function() {
-        const max_length = 200;
+        const max_length = 300;
         let title_length = $(this).val().length;
         $(this).next('span').html(title_length+'/'+max_length);
     })
 
     $('#select-category').change(function() {
+        $('.hidden-category').val($(this).val());
         if($.isNumeric($(this).val())) {
             $('button[type="submit"].disabled').removeAttr('disabled');
             $('button[type="submit"].disabled').removeClass('disabled');
@@ -116,5 +140,8 @@
             $('button[type="submit"]:not(.disabled)').addClass('disabled');
         }
     })
+
+    $('#success-message').delay(10000).fadeOut();
+    $('.error-message').delay(10000).fadeOut();
 </script>
 @endsection
